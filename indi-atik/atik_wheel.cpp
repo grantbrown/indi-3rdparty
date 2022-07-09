@@ -57,9 +57,11 @@ public:
 
             if (rc != ARTEMIS_OK)
             {
-                IDLog("ArtemisEFWGetDeviceDetails for device %d failed with errpr %d.", i, rc);
+                IDLog("ArtemisEFWGetDeviceDetails for device %d failed with error %d.", i, rc);
                 continue;
-            }
+            } else {
+                IDLog("ArtemisEFWGetDeviceDetails for device %d succeeded with status %d.", i, rc);
+	    } 
 
             const char *fwName = (type == ARTEMIS_EFW1) ? "EFW1" : "EFW2";
 
